@@ -41,7 +41,6 @@ class TicketsSeller extends Thread {
 
                     e.printStackTrace();
                 }
-                System.out.println(getName() + "...���ǵ�" + tickets-- + "��Ʊ");
             }
         }
     }
