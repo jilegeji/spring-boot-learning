@@ -4,13 +4,12 @@ public class Demo_Synchronized {
 
     /**
      * @param args
-     * ����:��·��Ʊ,һ��100��,ͨ���ĸ���������.
      */
     public static void main(String[] args) {
-        TicketsSeller t1 = new TicketsSeller("����1");
-        TicketsSeller t2 = new TicketsSeller("����2");
-        TicketsSeller t3 = new TicketsSeller("����3");
-        TicketsSeller t4 = new TicketsSeller("����4");
+        TicketsSeller t1 = new TicketsSeller("窗口1");
+        TicketsSeller t2 = new TicketsSeller("窗口2");
+        TicketsSeller t3 = new TicketsSeller("窗口3");
+        TicketsSeller t4 = new TicketsSeller("窗口4");
 
         t1.start();
         t2.start();
@@ -36,12 +35,12 @@ class TicketsSeller extends Thread {
                 if(tickets <= 0) 
                     break;
                 try {
-                    Thread.sleep(10);//�߳�1˯,�߳�2˯,�߳�3˯,�߳�4˯
+                    Thread.sleep(10);
                 } catch (InterruptedException e) {
 
                     e.printStackTrace();
                 }
-                System.out.println(getName() + "...���ǵ�" + tickets-- + "��Ʊ");
+                System.out.println(getName() + "...卖出第" + tickets-- + "张票");
             }
         }
     }
