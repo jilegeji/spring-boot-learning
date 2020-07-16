@@ -61,20 +61,20 @@ class Printer3 {
 	
 	private int flag = 1;
 	public void print1() throws InterruptedException {							
-		r.lock();								//ï¿½ï¿½È¡ï¿½ï¿½
+		r.lock();
 			if(flag != 1) {
 				c1.await();
 			}
-			System.out.print("ï¿½ï¿½");
-			System.out.print("ï¿½ï¿½");
-			System.out.print("ï¿½ï¿½");
-			System.out.print("ï¿½ï¿½");
-			System.out.print("Ô±");
+			System.out.print("黑");
+			System.out.print("马");
+			System.out.print("程");
+			System.out.print("序");
+			System.out.print("员");
 			System.out.print("\r\n");
 			flag = 2;
-			//this.notify();						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñµï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½ß³ï¿?
+			//this.notify();
 			c2.signal();
-		r.unlock();								//ï¿½Í·ï¿½ï¿½ï¿½
+		r.unlock();
 	}
 	
 	public void print2() throws InterruptedException {
