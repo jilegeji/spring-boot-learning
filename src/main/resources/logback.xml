@@ -1,0 +1,59 @@
+<configuration>
+    <property name="charset" value="UTF-8"/>
+    <property name="pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+    
+    <appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/log.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<charset>${charset}</charset>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	 <appender name="REST_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/rest_log.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<charset>${charset}</charset>
+			<pattern>${pattern}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n
+			</pattern>
+		</encoder>
+	</appender> 
+
+    <logger name="org.hibernate.SQL" level="ERROR"/>
+    <logger name="org.hibernate.type" level="ERROR"/>
+    <logger name="org.springframework.web" level="ERROR"/>
+    <logger name="org.springframework.data.rest" level="ERROR"/>
+    <logger name="nesdu" level="INFO"/>
+    
+    <!-- 子节点 -->
+    <logger name="rest_logger" level="INFO" additivity="false">
+        <appender-ref ref="REST_FILE"></appender-ref>
+    </logger>
+    
+    <!-- 这种写法name就是类名(也可以写包名)。additivity="false"表示是否也追加到root中 -->
+    <!-- <logger name="com.jilegeji.springbootlearning.controller.FirstController" level="INFO" additivity="false">
+        <appender-ref ref="REST_FILE"></appender-ref>
+    </logger> -->
+    
+    <!-- 当类中通过名字匹配不到已定义的<logger>时,会默认找<root> -->
+    <!-- 根节点 -->
+    <root level="WARN">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+    
+</configuration>
