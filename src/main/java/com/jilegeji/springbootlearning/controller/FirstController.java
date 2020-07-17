@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.jilegeji.springbootlearning.bean.Dog;
 import com.jilegeji.springbootlearning.propertiesBean.ConstantsPropertyBean;
 import com.jilegeji.springbootlearning.propertiesBean.PersonPropertyBean;
 import lombok.extern.slf4j.Slf4j;
@@ -51,12 +53,14 @@ public class FirstController {
 		return "hello world!";
 	}
 	
+	@Autowired//这是@Autowired作用于普通方法,该方法用自动运行一次
 	@RequestMapping("/testSLF4j")
-	public void testSLF4j(){
+	public void testSLF4j(Dog dog){
 		System.out.println(FirstController.class);
 		log.warn("这是我的第一条log日志!");
 		if(logger.isInfoEnabled()){
 			logger.info("这是我的第一条{}日志!","rest_logger");
 		}
+		System.out.println(dog);
 	}
 }

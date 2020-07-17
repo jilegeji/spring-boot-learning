@@ -1,5 +1,7 @@
 package com.jilegeji.springbootlearning.bean;
 
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,6 +13,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Component
 public class Dog {
 	
 	private String name;
