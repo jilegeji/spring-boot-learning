@@ -5,6 +5,8 @@ spring:
   datasource:
     username: root
     password: root
+  freemarker:
+    suffix: .html #默认后缀名是.ftlh
     
 #yaml语法1(简写版),outlook为List(数组,set同理),dog为对象(map同理)
 person1: {name: jilegeji,age: 25,sex: male,outlook: [175cm,60kg],dog: {name: 来福,age: 1}}
@@ -19,4 +21,3 @@ person2:
   dog:
     name: 来福
     age: 1
-  
