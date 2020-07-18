@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.jilegeji.springbootlearning.bean.Dog;
 import com.jilegeji.springbootlearning.controller.FirstController;
 
 @RunWith(SpringRunner.class)
@@ -16,7 +18,7 @@ public class AllTest {
  
     @Test
      public void testSLF4j(){
-    	firstController.testSLF4j();
+    	firstController.testSLF4j(new Dog());
      }
  
  

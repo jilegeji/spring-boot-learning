@@ -9,6 +9,7 @@ public class IndexController {
 
 	@RequestMapping("/index")
 	public String index(Model model){
+		model.addAttribute("username", "吉了个吉");
 		return "index";
 	}
 }
