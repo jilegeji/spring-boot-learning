@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>common header</title>
+<!-- 加密 -->
+<script src="${request.contextPath }/js/template.js"></script>
+<script type="text/javascript">
+	if(typeof(jQuery)=="undefined"){
+		console.log("jQuery is not imported");
+		document
+        .write("<script src='${request.contextPath }/js/jquery-3.2.1.min.js'>"
+        + "<"+"/script>");
+	}else{
+		console.log("jQuery is imported");
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
