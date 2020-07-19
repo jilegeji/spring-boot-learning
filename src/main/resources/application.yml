@@ -1,6 +1,7 @@
 server:
   servlet:
     context-path: /jilegeji
+
 spring:
   datasource:
     username: root
@@ -8,8 +9,11 @@ spring:
   freemarker:
     request-context-attribute: request #给request域起别名,springBoot默认名字是springMacroRequestContext
     suffix: .html #默认后缀名是.ftlh
-   
-    
+  resources:
+    static-locations: classpath:/static/ #静态资源的存放路径
+  mvc:
+    static-path-pattern: /** #访问静态资源的前缀
+
 #yaml语法1(简写版),outlook为List(数组,set同理),dog为对象(map同理)
 person1: {name: jilegeji,age: 25,sex: male,outlook: [175cm,60kg],dog: {name: 来福,age: 1}}
 
@@ -24,12 +28,3 @@ person2:
   dog:
     name: 来福
     age: 1
-
-#默认值-to learn
-#spring:
-#  mvc:
-#    static-path-pattern: /** 
-#    
-#spring:
-#  resources:
-#    static-locations: classpath:/static/

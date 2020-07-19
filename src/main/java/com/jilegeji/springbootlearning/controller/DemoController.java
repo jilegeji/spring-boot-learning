@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jilegeji.springbootlearning.bean.Dog;
-import com.jilegeji.springbootlearning.propertiesBean.ConstantsPropertyBean;
-import com.jilegeji.springbootlearning.propertiesBean.PersonPropertyBean;
+import com.jilegeji.springbootlearning.propertiesBean.ConstantsProperties;
+import com.jilegeji.springbootlearning.propertiesBean.PersonProperties;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-public class FirstController {
+public class DemoController {
 	
 	private static final Logger logger = LoggerFactory.getLogger("rest_logger"); 
 	
@@ -27,15 +27,15 @@ public class FirstController {
     private Environment environment;
 	
 	@Autowired
-	private ConstantsPropertyBean constantsPropertyBean;
+	private ConstantsProperties constantsPropertyBean;
 	
 	@Autowired
-	private PersonPropertyBean personPropertyBean;
+	private PersonProperties personPropertyBean;
 
 	@Value("${spring.datasource.username}")
 	private String username;
 	
-	@RequestMapping("/hello")
+	@RequestMapping("/testProperties")
 	public String Hello(){
 		System.out.println(personPropertyBean);
 		System.out.println("=======================================================================");
@@ -50,13 +50,13 @@ public class FirstController {
 		System.out.println(constantsPropertyBean.getName());
 		System.out.println(constantsPropertyBean.getAge());
 		System.out.println(constantsPropertyBean.getGender());
-		return "hello world!";
+		return "testProperties";
 	}
 	
-	@Autowired//这是@Autowired作用于普通方法,该方法用自动运行一次
+	//@Autowired//这是@Autowired作用于普通方法,该方法用自动运行一次
 	@RequestMapping("/testSLF4j")
 	public void testSLF4j(Dog dog){
-		System.out.println(FirstController.class);
+		System.out.println(DemoController.class);
 		log.warn("这是我的第一条log日志!");
 		if(logger.isInfoEnabled()){
 			logger.info("这是我的第一条{}日志!","rest_logger");

@@ -7,14 +7,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.jilegeji.springbootlearning.bean.Dog;
-import com.jilegeji.springbootlearning.controller.FirstController;
+import com.jilegeji.springbootlearning.controller.DemoController;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AllTest {
 	
     @Autowired
-    private FirstController firstController;
+    private DemoController firstController;
  
     @Test
      public void testSLF4j(){

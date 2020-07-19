@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix="user")
 @PropertySource("classpath:constants.properties")
-public class ConstantsPropertyBean {
+public class ConstantsProperties {
 
 	private String name;
 	private int age;

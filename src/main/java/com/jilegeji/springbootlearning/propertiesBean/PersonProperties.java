@@ -8,7 +8,7 @@ import com.jilegeji.springbootlearning.bean.Dog;
 
 @Component
 @ConfigurationProperties(prefix="person2")
-public class PersonPropertyBean {
+public class PersonProperties {
 	
 	private String name;
 	private int age;

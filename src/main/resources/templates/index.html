@@ -3,18 +3,11 @@
 <meta charset="UTF-8">
 <title>欢迎你</title>
 <link rel="shortcut icon" href="favicon.ico" >
-<script src="${request.contextPath}/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-	$(function(){
-		alert("引入jQuery!")
-	})
-</script>
+
 </head>
 <body>
 <h1>
-	你好,我是首页!
-	<br/>
-	欢迎你,${username}
+	欢迎你,${account.username},您的密码为${account.password},请妥善保管!
 	<br/>
 	<!-- ${springMacroRequestContext.contextPath} -->
 	${request.contextPath}
